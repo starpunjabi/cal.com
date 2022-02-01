@@ -84,15 +84,16 @@ const CryptoSection = (props: CryptoSectionProps) => {
 
   const verifyButton = useMemo(() => {
     return (
-      <Button onClick={verifyWallet} type="button" id="hasToken" name="hasToken">
-        Verify wallet
+      <Button color="secondary" onClick={verifyWallet} type="button" id="hasToken" name="hasToken">
+        <img className="h-5 mr-1" src="/integrations/metamask.svg" /> Verify wallet
       </Button>
     );
   }, [verifyWallet]);
 
   const connectButton = useMemo(() => {
     return (
-      <Button onClick={connectMetamask} type="button">
+      <Button color="secondary" onClick={connectMetamask} type="button">
+        <img className="h-5 mr-1" src="/integrations/metamask.svg" />
         Connect Metamask
       </Button>
     );
@@ -101,12 +102,14 @@ const CryptoSection = (props: CryptoSectionProps) => {
   const oneStepButton = useMemo(() => {
     return (
       <Button
+        color="secondary"
         type="button"
         onClick={async () => {
           await connectMetamask();
           await verifyWallet();
         }}>
-        Verify wallet
+        <img className="h-5 mr-1" src="/integrations/metamask.svg" />
+        Verify Wallet
       </Button>
     );
   }, [connectMetamask, verifyWallet]);
@@ -126,13 +129,8 @@ const CryptoSection = (props: CryptoSectionProps) => {
 
   return (
     <div
-      id={`crypto-${props.id}`}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        padding: "2.5%",
-      }}>
+      className="absolute transition-opacity transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 top-1/2 left-1/2 "
+      id={`crypto-${props.id}`}>
       {determineButton()}
     </div>
   );
