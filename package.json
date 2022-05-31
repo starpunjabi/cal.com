@@ -71,8 +71,8 @@
     ]
   },
   "engines": {
-    "node": ">=14.x <15",
-    "npm": ">=7.0.0",
+    "node": "=16.x",
+    "npm": "7.x",
     "yarn": ">=1.19.0 < 2.0.0"
   },
   "packageManager": "yarn@1.22.17"
