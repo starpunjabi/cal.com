@@ -1,4 +1,5 @@
 {
+  "stack": "heroku-22",
   "name": "Cal.com",
   "description": "Open Source Scheduling",
   "repository": "https://github.com/calcom/cal.com",
